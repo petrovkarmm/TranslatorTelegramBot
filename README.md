@@ -67,8 +67,10 @@
 
 ## Установка
 
-1. pip install -r requirements.txt (установка необходимых библиотек)
+1. Запуск с ветки main
 
-2. python main.py (запуск бота)
+2. pip install -r requirements.txt (установка необходимых библиотек)
+
+3. python main.py (запуск бота)
 
 # Благодарю за уделённое время. Хорошего дня.
