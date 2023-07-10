@@ -1,30 +1,8 @@
-from environs import Env
-from dataclasses import dataclass
+import os
 
+from dotenv import load_dotenv
 
-@dataclass
-class Bots:
-    bot_token: str
-    admin_id: int
-    api_token: str
+load_dotenv()
 
-
-@dataclass
-class Settings:
-    bots: Bots
-
-
-def get_settings(path: str):
-    env = Env()
-    env.read_env(path)
-
-    return Settings(
-        bots=Bots(
-            bot_token=env.str("TOKEN"),
-            admin_id=env.int("ADMIN_ID"),
-            api_token=env.str("API_TOKEN")
-        )
-    )
-
-
-settings = get_settings('input')
+bot_token = os.getenv('TOKEN')
+admin_id = os.getenv('ADMIN_ID')

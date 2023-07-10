@@ -4,7 +4,7 @@ from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
 
-from core.settings import settings
+from core.settings import admin_id
 
 from core.keyboards.reply import start_keyboard, get_reply_keyboard
 from core.keyboards.inline import select_my_contacts
@@ -48,7 +48,7 @@ async def get_start(message: Message, bot: Bot):
     :param bot:
     :return:
     """
-    await bot.send_message(settings.bots.admin_id, text=f'Твоим ботом воспользовался пользователь. ')
+    await bot.send_message(admin_id, text=f'Твоим ботом воспользовался пользователь. ')
     await bot.send_message(message.from_user.id, f"<b>Добро пожаловать в телеграм!\n"
                                                  f"Для полного ознакомления с ботом "
                                                  f"прошу использовать следующую команду:"

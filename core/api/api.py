@@ -41,7 +41,6 @@ class ApiTranslater:
 
         else:
             self.__translation = get_request.json()['Translation'].get('Translation')
-            print(f"Перевод: {get_request.json()['Translation'].get('Translation')}")
 
     @property
     def get_translation(self) -> str:

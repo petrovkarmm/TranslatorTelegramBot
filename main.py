@@ -1,3 +1,8 @@
+import asyncio
+import logging
+
+from core.settings import admin_id, bot_token
+
 from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command
 
@@ -6,14 +11,9 @@ from core.handlers.handlers import (get_start,
                                     get_help,
                                     get_contacts)
 
-from core.settings import settings
-
 from core.utils.statesform import StepsForm
 
 from core.utils.commands import set_commands
-
-import asyncio
-import logging
 
 
 async def start_bot(bot: Bot):
@@ -23,11 +23,11 @@ async def start_bot(bot: Bot):
     :return:
     """
     await set_commands(bot)
-    await bot.send_message(settings.bots.admin_id, text=f'Бот запущен!')
+    await bot.send_message(admin_id, text=f'Бот запущен!')
 
 
 async def stop_bot(bot: Bot):
-    await bot.send_message(settings.bots.admin_id, text='Бот выключен!')
+    await bot.send_message(admin_id, text='Бот выключен!')
 
 
 async def start():
@@ -40,7 +40,7 @@ async def start():
                         "(%(filename)s).%(funcName)s(%(lineno)d) - %(message)s"
                         )
 
-    bot = Bot(token=settings.bots.bot_token, parse_mode='HTML')
+    bot = Bot(token=bot_token, parse_mode='HTML')
     dp = Dispatcher()
 
     dp.startup.register(start_bot)

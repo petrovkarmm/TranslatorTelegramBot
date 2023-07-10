@@ -1,6 +1,11 @@
-from core.settings import settings
+import os
 
-api_token = settings.bots.api_token
+from dotenv import load_dotenv
+
+load_dotenv()
+
+api_token = os.getenv('API_TOKEN')
+
 BASE_URL_POST = 'https://developers.lingvolive.com/api/v1.1/authenticate'
 
 languages_codes = {
