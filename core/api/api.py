@@ -26,8 +26,8 @@ class ApiTranslater:
             "Authorization": f"Bearer {get_token.text}"
         }
 
-        # По какой-то причине была ошибка 404
-        # (что указывало на неверный отправляемый адрес, пришлось передать данные так...
+        # По какой-то причине была ошибка 404,
+        # что указывало на неверный отправляемый адрес, пришлось передать данные так...
         url = f'https://developers.lingvolive.com/api/v1/Minicard' \
               f'?text={word}&' \
               f'srcLang={int(text_language_code)}&' \

@@ -120,7 +120,7 @@ async def translate_text(message: Message, state: FSMContext):
     language = context_data.get('language')
     language_code = int(languages_codes.get(language))
 
-    # Отправка данных в core.api.api.py класс ApiTranslater для получение перевода
+    # Отправка данных в core.api.api.py класс ApiTranslater для получения перевода
     translator_object = ApiTranslater(word, text_language_code, language_code)
     translate_answer = translator_object.get_translation
 
