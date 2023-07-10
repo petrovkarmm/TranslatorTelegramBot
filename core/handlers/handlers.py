@@ -1,7 +1,4 @@
 from aiogram import Bot
-from aiogram.dispatcher import router
-from aiogram.filters import Command
-from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
 
 from core.settings import admin_id
@@ -54,6 +51,3 @@ async def get_start(message: Message, bot: Bot):
                                                  f"прошу использовать следующую команду:"
                                                  f" /help. Она доступна у вас в меню и в качестве кнопки.</b>",
                            reply_markup=start_keyboard)
-
-
-
