@@ -95,7 +95,7 @@ async def get_language_type_and_confirm(message: Message, state: FSMContext) -> 
     await message.answer('<b>Вот введенные вами данные:</b>')
     data_user = f'Слово: {text}\n' \
                 f'Язык текста: {languages.get(text_language)}\n' \
-                f'Выбранные язык перевода: {languages.get(language)}\n'
+                f'Выбранный язык перевода: {languages.get(language)}\n'
     await message.answer(f'{data_user}')
     await message.answer(f'Произвести перевод?', reply_markup=confirm_or_cancel_translate)
     await state.set_state(StepsForm.TRANSLATED_TEXT)
